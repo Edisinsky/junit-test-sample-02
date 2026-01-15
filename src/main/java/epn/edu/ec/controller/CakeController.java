@@ -26,12 +26,13 @@ import epn.edu.ec.service.CakeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+
 @RequiredArgsConstructor
 @Slf4j
 @RestController
 @RequestMapping("/cakes")
 public class CakeController {
-        private final CakeService cakeService;
+    private final CakeService cakeService;
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     public CakesResponse getCakes() {
@@ -73,7 +74,7 @@ public class CakeController {
     public ResponseEntity<Void> deleteCake(@PathVariable long id) {
         log.info("deleting cake with id {}", id);
 
-        cakeService.deleteCake(id);
+            cakeService.deleteCake(id);
 
         log.info("cake deleted, cake id {}", id);
         return ResponseEntity.status(NO_CONTENT).build();
@@ -83,5 +84,5 @@ public class CakeController {
     @ResponseStatus(value = NOT_FOUND)
     private void cakeNotFoundException() {
     }
-    
+
 }

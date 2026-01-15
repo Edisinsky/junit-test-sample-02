@@ -11,6 +11,6 @@ public class CakeResponse {
 
     private long id;
     private String title;
-    private String description;   
+    private String description;
 
 }
